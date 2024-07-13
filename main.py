@@ -1,37 +1,13 @@
-import config
-import time
-import logging
-from pyrogram import Client, idle
-from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvalid
+from flask import Flask
+from bot import Bot
 
-logging.basicConfig(
-    level=logging.INFO, 
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
+app = Flask(__name__)
 
-logging.getLogger("pymongo").setLevel(logging.ERROR)
-
-StartTime = time.time()
-app = Client(
-    "DAXX",
-    api_id=config.API_ID,
-    api_hash=config.API_HASH,
-    bot_token=config.BOT_TOKEN,
-    in_memory=True,
-    plugins=dict(root="codewithshubham"),
-)
-
+@app.route('/')
+def home():
+    return "Bot is running!"
 
 if __name__ == "__main__":
-    print("ꜱᴛᴀʀᴛɪɴɢ ʏᴏᴜʀ ꜱᴛʀɪɴɢ ʙᴏᴛ ...")
-    try:
-        app.start()
-    except (ApiIdInvalid, ApiIdPublishedFlood):
-        raise Exception("Your API_ID/API_HASH is not valid.")
-    except AccessTokenInvalid:
-        raise Exception("Your BOT_TOKEN is not valid.")
-    uname = app.get_me().username
-    print(f"@{uname} ꜱᴛᴀʀᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ. ᴍᴀᴅᴇ ʙʏ @The_creator_Botz 🤗")
-    idle()
-    app.stop()
-    print("ʙᴏᴛ ꜱᴛᴏᴘᴘᴇᴅ!")
+    bot = Bot()
+    bot.run()  # Assuming this doesn't block
+    app.run(host='0.0.0.0', port=8080)  # Bind to port 5000
