@@ -15,9 +15,12 @@ async def start(bot: Client, msg: Message):
         return
 
     me2 = (await bot.get_me()).mention
-    await bot.send_message(
+    picture_url = "https://te.legra.ph/file/1f2ac2fe8cdf202799847.jpg"
+    
+    await bot.send_photo(
         chat_id=msg.chat.id,
-        text=f"""ʜᴇʏ {msg.from_user.mention},
+        photo=picture_url,
+        caption=f"""ʜᴇʏ {msg.from_user.mention},
 
 ɪ ᴀᴍ {me2},
 ᴛʀᴜꜱᴛᴇᴅ ꜱᴛʀɪɴɢ ɢᴇɴʀᴀᴛᴏʀ ʙᴏᴛ.
