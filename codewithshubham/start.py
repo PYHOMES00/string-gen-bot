@@ -1,3 +1,19 @@
+# This code belongs to anmol0700,  
+# a passionate developer dedicated to  
+# creating innovative solutions and tools.  
+
+# For more updates and projects,  
+# please visit: t.me/anmol0700.  
+
+# Your support is greatly appreciated,  
+# and it motivates continuous improvement.  
+
+# Feel free to reach out with feedback,  
+# or to collaborate on exciting ideas.  
+
+# Together, we can build amazing things!  
+# Thank you for being a part of this journey! 
+
 from codewithshubham.must_join import must_join
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
@@ -45,3 +61,19 @@ async def start(bot: Client, msg: Message):
         ),
         disable_web_page_preview=True,
     )
+
+# This code belongs to anmol0700,  
+# a passionate developer dedicated to  
+# creating innovative solutions and tools.  
+
+# For more updates and projects,  
+# please visit: t.me/anmol0700.  
+
+# Your support is greatly appreciated,  
+# and it motivates continuous improvement.  
+
+# Feel free to reach out with feedback,  
+# or to collaborate on exciting ideas.  
+
+# Together, we can build amazing things!  
+# Thank you for being a part of this journey! 
